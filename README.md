@@ -8,12 +8,12 @@ Voici le **récapitulatif final et corrigé** de votre installation complète, a
 ====================================================================================
   AU REZ-DE-CHAUSSÉE (4 radiateurs neufs IRSAP Tesi 3 — 5500 W au total)
 ====================================================================================
-  • 4x IRSAP Tesi 3 Électrique type S, SANS RÉGULATION :
-    ├── Cuisine : 1x 1000 W (Réf: RT 3 0600 15 .. IR SRN)
-    ├── Salle :   1x 1500 W (Réf: RT 3 0600 21 .. IR SVN) — 1500 W nominal IRSAP
-    ├── Salon :   1x 1500 W (Réf: RT 3 0600 21 .. IR SVN) — (pour vos 2 emplacements 1550 W)
-    └── Bureau :  1x 1500 W (Réf: RT 3 0600 21 .. IR SVN)
-  • 4x Shelly 1PM Gen4 (1 caché dans chaque boîte murale derrière chaque Tesi)
+  • 4x IRSAP Tesi 3 Électrique type S, SANS RÉGULATION (sous différentiel I2 — Folio 3) :
+    ├── Cuisine (Q17 - C16 1,5 mm², partagé avec sèche-serviettes WC non piloté) : 1x 1000 W (Réf: RT 3 0600 15 .. IR SRN)
+    ├── Salle   (Q15 - C16 1,5 mm², dédié) : 1x 1500 W (Réf: RT 3 0600 21 .. IR SVN) — 1500 W nominal IRSAP
+    ├── Salon   (Q16 - C16 1,5 mm², dédié) : 1x 1500 W (Réf: RT 3 0600 21 .. IR SVN) — (pour vos 2 emplacements 1550 W)
+    └── Bureau  (Q18 - C10 1,5 mm², dédié) : 1x 1500 W (Réf: RT 3 0600 21 .. IR SVN)
+  • 4x Shelly 1PM Gen4 (1 caché dans chaque boîte murale derrière chaque Tesi ; le sèche-serviettes du WC reste en 230 V permanent hors Shelly)
   • 2x Sondes Shelly H&T Gen3 (idéalement sur USB-C) ou BLU H&T :
     ├── 1 sonde pour la pièce de vie (groupe Cuisine 1000 W + Salle 1500 W + Salon 1500 W = 4000 W)
     └── 1 sonde pour le Bureau (1500 W) — (ou 1 seule sonde au RDC si bureau ouvert)
@@ -22,13 +22,14 @@ Voici le **récapitulatif final et corrigé** de votre installation complète, a
 ====================================================================================
   À L'ÉTAGE & SALLE DE BAIN (1 Tesi + 1 Sèche-serviettes + 3 Acova — 6250 W)
 ====================================================================================
-  • Palier : 1x IRSAP Tesi 3 Électrique type S, SANS RÉGULATION de 1000 W
-    (Réf: RT 3 0600 15 .. IR SRN)
-  • Salle de bain : 1x Sèche-serviettes asymétrique IRSAP type S, SANS RÉGULATION
-    de 750 W (standard SDB ; ou 500 W si ≤ 5 m²) — Funky_S, Soul_S ou Jazz_S
-  • Chambres : Vos 3x Acova TMC-150-086-2 (3x 1500 W) à thermostat MÉCANIQUE
-    (molette bloquée au maximum) avec fil pilote câblé jusqu'au cellier
-  • 5x Shelly 1PM Gen4 (1 derrière le Tesi, 1 derrière le sèche-serviettes, 3 Acova)
+  • Sous différentiel I3 (Folio 5) :
+    ├── Palier  (Q27 - C16 2,5 mm², partagé avec Chambre 2) : 1x IRSAP Tesi 3 type S, SANS RÉGULATION de 1000 W (Réf: RT 3 0600 15 .. IR SRN)
+    ├── Salle de bain (Q30 - C16 1,5 mm², dédié) : 1x Sèche-serviettes asymétrique IRSAP type S, SANS RÉGULATION de 750 W (ou 500 W) — Funky_S, Soul_S ou Jazz_S
+    └── Chambres : Vos 3x Acova TMC-150-086-2 (3x 1500 W) à thermostat MÉCANIQUE (molette au max) :
+          ├── Chambre 1 (Q29 - C10 1,5 mm², dédié)
+          ├── Chambre 2 (Q27 - C16 2,5 mm², partagé avec Palier)
+          └── Chambre 3 (Q28 - C16 2,5 mm², dédié)
+  • 5x Shelly 1PM Gen4 (1 derrière le Tesi du Palier, 1 derrière le sèche-serviettes SDB, 3 derrière les Acova)
   • 5x Sondes Shelly H&T Gen3 / BLU H&T (1 palier + 1 SDB + 3 chambres)
 
 ====================================================================================
@@ -91,9 +92,10 @@ Voici le **récapitulatif final et corrigé** de votre installation complète, a
 * **9x [`Shelly 1PM Gen4`](https://www.shelly.com/products/shelly-1pm-gen4-1)** ([Documentation officielle](https://www.shelly.com/blogs/documentation/shelly-1pm-gen4) | [Comparateur de prix UE](https://www.hoteudeals.com/p/shelly-1pm-gen4-wifi-zigbee-relae-362221) — 16 A max à 240 V, avec mesure de consommation en Watts) :
   * Se glissent directement dans la boîte murale (sortie de câble) derrière les 5 Tesi (cuisine, salle, salon, bureau, palier), le sèche-serviettes de la salle de bain et les 3 Acova des chambres à l'étage.
   * **Prix vérifié :** **42,90 € TTC le pack de 2** (et **21,90 € TTC à l'unité**) sur la boutique officielle [Shelly Europe](https://www.shelly.com/products/shelly-1pm-gen4-1) (soit **193,50 € TTC pour les 9** avec 4 packs de 2 + 1 unité, livraison gratuite dès 79 €), ou de **17,00 € à 22,00 € TTC/unité** chez les revendeurs européens (**~153 à 194 € TTC pour les 9**).
-  * **Note importante — Cas où le [`Shelly Pro 1PM`](https://www.shelly.com/products/shelly-pro-1pm) (rail DIN au tableau, 75,90 € TTC sur Shelly Europe / ~55–68 € chez les revendeurs, [Documentation](https://us.shelly.com/blogs/documentation/shelly-pro-1pm)) peut être inévitable :**
-    * Selon le **groupement et le câblage physique réel** de vos radiateurs (par exemple si les radiateurs de la pièce de vie sont repiqués ensemble sur un même départ `C16` avec des boîtes murales trop encombrées par les ponts de repiquage ou trop peu profondes, ou si un câble est inaccessible), **placer un `Shelly Pro 1PM` directement sur le rail DIN du tableau électrique (avec câble Ethernet RJ45) peut s'avérer inévitable** à la place des `1PM Gen4` encastrés de ce circuit.
-    * **Condition électrique impérative :** le `Shelly Pro 1PM` est lui aussi limité à **16 A max (~3 680 W)** sur un disjoncteur **16 A max**. Il convient donc en direct si le disjoncteur `C16` regroupe **Salle (1500 W) + Salon (1500 W) = 3000 W (~13,0 A)** ou **Cuisine (1000 W) + 1 radiateur 1500 W = 2500 W (~10,9 A)**, mais **pas** en direct si les **3 radiateurs de la pièce de vie (Cuisine 1000 W + Salle 1500 W + Salon 1500 W = 4000 W, ~17,4 A)** ou les **4 radiateurs du RDC (5500 W, ~23,9 A)** sont sur un même départ `C20` / `C25` (au-delà de 16 A, le Shelly au tableau devra piloter la bobine d'un contacteur modulaire 20 A / 25 A).
+  * **Pourquoi votre schéma unifilaire (`M LEBAILLIF 2026-10 unif.pdf`) confirme à 100 % le choix des `Shelly 1PM Gen4` en boîte murale (et exclut un Shelly au tableau sur `Q17` et `Q27`) :**
+    * **Circuit `Q17` (`Cuisine Wc`, C16 en $1,5\text{ mm}^2$) :** il alimente à la fois le Tesi 1000 W de la **Cuisine** et le petit sèche-serviettes du **WC** (que vous ne souhaitez pas piloter). En logeant le `Shelly 1PM Gen4` dans la boîte murale de la Cuisine (en aval du repiquage), le sèche-serviettes du WC conserve son 230 V permanent et le Shelly ne coupe/mesure que le radiateur de la Cuisine.
+    * **Circuit `Q27` (`Chambre 2 Palier`, C16 en $2,5\text{ mm}^2$) :** il alimente à la fois la **Chambre 2 (1500 W)** et le **Palier (1000 W)** (2500 W cumulés, ~10,9 A < 16 A). Loger un `Shelly 1PM Gen4` dans chacune des 2 boîtes murales est la seule façon de piloter et mesurer séparément la Chambre 2 et le Palier.
+    * **Les 6 autres départs (`Q15` Salle, `Q16` Salon, `Q18` Bureau, `Q28` Chambre 3, `Q29` Chambre 1, `Q30` SDB)** sont des lignes 100 % individuelles (1 disjoncteur = 1 radiateur).
 * **Les 7 Sondes de Température sans fil (1 Cuisine/Salon + 1 Bureau + 1 Salle de bain + 1 Palier + 3 Chambres — ou 6 si le bureau est groupé avec le salon) :**
   * **Option 1 — Wi-Fi avec écran E-Ink : [`Shelly H&T Gen3`](https://www.shelly.com/products/shelly-h-t-gen3-matte-black)** ([Documentation FR](https://www.shelly.com/fr/blogs/documentation/shelly-h-t-gen3) | [Comparateur UE](https://www.hoteudeals.com/p/shelly-ht-gen3-wifi-humidity-temperature-sensor-matt-black-342879)) :
     * **Prix vérifié :** **37,90 € TTC/unité** sur Shelly Europe (et de **31,60 € à 38,00 € TTC** chez les revendeurs UE) → **~221 à 265 € TTC pour 7 sondes** (ou ~190 à 227 € pour 6).
@@ -106,7 +108,7 @@ Voici le **récapitulatif final et corrigé** de votre installation complète, a
   * *(Optionnel pour le salon)* : **1x [`Shelly Wall Display + sonde BLU H&T incluse`](https://www.shelly.com/products/shelly-wall-display-white)** ([Présentation](https://www.shelly.com/pages/wall-display)) : **131,90 € TTC** sur Shelly Europe (remplace la sonde du salon s'il est choisi ; version grand écran `Wall Display X2i` à ~158–177 € TTC).
 
 #### C. Petit matériel électrique (Pour les 9 boîtes murales)
-* **1x boîte de borniers `Wago 221-413`** (format compact, 3 entrées) + 2 m de fil silicone 1,5 mm² ou 2,5 mm² (Bleu et Rouge) + embouts de câblage, pour faire les petits ponts de 10 cm dans les boîtes murales : **~15 à 20 € TTC**.
+* **1x boîte de borniers `Wago 221-413` (3 entrées) + quelques `Wago 221-415` (5 entrées, indispensables pour les 2 boîtes avec repiquage sur `Q17` Cuisine/WC et `Q27` Chambre 2/Palier)** + 2 m de fil silicone 1,5 mm² ou 2,5 mm² (Bleu et Rouge) + embouts de câblage, pour faire les petits ponts de 10 cm dans les boîtes murales : **~15 à 25 € TTC**.
   * Isolant résistant à la chaleur : la notice Shelly **recommande au minimum PVC T105 °C**. Le fil rigide courant (H07V-U) n'est donné que pour 70 °C → pour ces ponts, prenez du fil silicone (H05SJ-K, 180 °C) avec embouts de câblage.
   * Section : la notice imprimée accepte 0,2 à 2,5 mm² par borne (la fiche en ligne annonce jusqu'à 4 mm² : restez à 2,5 mm² max), et **un seul fil par borne**.
 * **Boîtes d'encastrement profondes** (≥ 40–50 mm, ~2 à 4 €/unité) si les vôtres sont trop justes : le Shelly mesure 37 × 42 × 16 mm et doit rester sous 40 °C ambiant.
@@ -130,16 +132,29 @@ Voici le **récapitulatif final et corrigé** de votre installation complète, a
 
 ### 3. Le Branchement dans chacune des 9 boîtes murales
 
+**Récapitulatif des 8 départs de votre schéma unifilaire (`M LEBAILLIF 2026-10 unif.pdf` — Folios 3 & 5) :**
+
+| Différentiel amont | Disjoncteur | Modèle & Calibre | Câble | Pièce(s) desservie(s) | Radiateur(s) & Puissance | Positionnement Shelly |
+|---|---|---|---|---|---|---|
+| **`I2`** (`R9PRC440` 4P 40A 30mA AC) | **`Q15`** (Folio 3) | `R9PFC616` — **C16** | $1,5\text{ mm}^2$ | **Salle à manger** | 1× Tesi 3 **1500 W** (~6,5 A) | 1× `1PM Gen4` boîte Salle |
+| **`I2`** (`R9PRC440` 4P 40A 30mA AC) | **`Q16`** (Folio 3) | `R9PFC616` — **C16** | $1,5\text{ mm}^2$ | **Salon** | 1× Tesi 3 **1500 W** (~6,5 A) | 1× `1PM Gen4` boîte Salon |
+| **`I2`** (`R9PRC440` 4P 40A 30mA AC) | **`Q17`** (Folio 3) | `R9PFC616` — **C16** | $1,5\text{ mm}^2$ | **Cuisine + WC** *(partagé)* | 1× Tesi 3 **1000 W** + petit sèche-serviettes WC | 1× `1PM Gen4` boîte Cuisine *(WC en 230 V direct)* |
+| **`I2`** (`R9PRC440` 4P 40A 30mA AC) | **`Q18`** (Folio 3) | `R9PFC610` — **C10** | $1,5\text{ mm}^2$ | **Bureau** | 1× Tesi 3 **1500 W** (~6,5 A < 10 A) | 1× `1PM Gen4` boîte Bureau |
+| **`I3`** (`R9PRC440` 4P 40A 30mA AC) | **`Q27`** (Folio 5) | `R9PFC616` — **C16** | $2,5\text{ mm}^2$ | **Chambre 2 + Palier** *(partagé)* | Acova **1500 W** + Tesi 3 **1000 W** = **2500 W** (~10,9 A) | 2× `1PM Gen4` (1 boîte Ch. 2 + 1 boîte Palier) |
+| **`I3`** (`R9PRC440` 4P 40A 30mA AC) | **`Q28`** (Folio 5) | `R9PFC616` — **C16** | $2,5\text{ mm}^2$ | **Chambre 3** | 1× Acova **1500 W** (~6,5 A) | 1× `1PM Gen4` boîte Ch. 3 |
+| **`I3`** (`R9PRC440` 4P 40A 30mA AC) | **`Q29`** (Folio 5) | `R9PFC610` — **C10** | $1,5\text{ mm}^2$ | **Chambre 1** | 1× Acova **1500 W** (~6,5 A < 10 A) | 1× `1PM Gen4` boîte Ch. 1 |
+| **`I3`** (`R9PRC440` 4P 40A 30mA AC) | **`Q30`** (Folio 5) | `R9PFC616` — **C16** | $1,5\text{ mm}^2$ | **Salle de bain** | 1× Sèche-serviettes **750 W** (~3,3 A) | 1× `1PM Gen4` boîte SDB |
+
 **Prérequis tableau électrique** (installation neuve, triphasé 12 kVA) :
-* **Un circuit 16 A par radiateur (ou par groupe ≤ 3 680 W)** → conforme à l'exigence de la notice Shelly (disjoncteur EN 60898-1, **courbe B ou C, 16 A maximum**). Si le câblage physique regroupe deux radiateurs sur un même disjoncteur `C16` (ex. Salle 1500 W + Salon 1500 W = 3000 W, ou Cuisine 1000 W + 1× 1500 W = 2500 W) avec un repiquage empêchant de loger les modules dans les boîtes murales, un **[`Shelly Pro 1PM`](https://www.shelly.com/products/shelly-pro-1pm) sur rail DIN au tableau** deviendra inévitable pour ce circuit (ou un contacteur modulaire commandé par le Shelly si le circuit regroupe > 3 680 W sur un `C20`, comme Cuisine + Salle + Salon = 4000 W). En salle de bain, le sèche-serviettes (Classe II, IP64 en version S) et sa boîte de sortie de câble doivent être installés en **Volume 2** ou **Hors Volume** (jamais en Volume 0 ou 1) conformément à la NF C 15-100.
-* **Pouvoir de coupure :** vos disjoncteurs sont des **Schneider Resi9 1P+N C16** : 3 kA (Icn 3000 A selon EN 60898-1, classe de limitation 3, d'après la fiche Schneider de la R9EFC616 ; la version peignable R9PFC616 est identique). C'est **conforme à la NF C 15-100**, qui se contente de 3 kA sur un branchement Enedis à puissance limitée, les fusibles AD en amont limitant le courant de court-circuit. La notice Shelly demande en plus **≥ 6 kA** : sur ce point précis, vos disjoncteurs ne la respectent pas. Ce n'est pas un défaut de votre installation. Les Resi9 C16 (XE comme XP) sont en 3 kA : pour être strictement conforme à la notice, il faudrait passer les circuits des radiateurs sur une gamme 6 kA (ex. Schneider **Acti9 iDT40N**, marquée 6000 A), en faisant vérifier par l'électricien la compatibilité avec votre tableau Resi9 (peigne, répartiteur XE).
-* **Limite par phase :** en triphasé 12 kVA, le disjoncteur de branchement Enedis est réglé à **20 A par phase**, soit ~4,6 kW par phase. Il coupe dès qu'**une** phase dépasse, même si les deux autres sont peu chargées. Puissance totale de vos 9 radiateurs : 6 × 1500 W (3 Acova + Salle + Salon + Bureau) + 2 × 1000 W (Cuisine + Palier) + 750 W (Salle de bain, ou 500 W) = **11,75 kW en tout** (~51,1 A cumulés ; *11,85 kW / ~51,5 A si l'on compte 2 × 1550 W*).
+* **Conformité des calibres `C16` (`R9PFC616`) et `C10` (`R9PFC610`) :** tous vos départs chauffage sont en 10 A ou 16 A courbe C, ce qui respecte à la fois la **NF C 15-100** (jusqu'à 2250 W sur un C10 en $1,5\text{ mm}^2$ pour `Q18` Bureau et `Q29` Chambre 1 ; jusqu'à 3500 W sur C16 en $1,5\text{ mm}^2$ ; jusqu'à 3680 W sur C16 en $2,5\text{ mm}^2$ pour `Q27` Chambre 2 + Palier à 2500 W) et la **notice du `Shelly 1PM Gen4`** (disjoncteur EN 60898-1, **courbe B ou C, 16 A maximum**). En salle de bain (`Q30`) et dans le WC (`Q17`), les sèche-serviettes et leurs boîtes de sortie de câble doivent être installés hors volumes interdits conformément à la NF C 15-100.
+* **Pouvoir de coupure :** vos disjoncteurs sont des **Schneider Resi9 XP 1P+N (`R9PFC616` / `R9PFC610`)** : 3 kA (Icn 3000 A selon EN 60898-1, classe de limitation 3). C'est **conforme à la NF C 15-100**, qui se contente de 3 kA sur un branchement Enedis à puissance limitée, les fusibles AD en amont limitant le courant de court-circuit. La notice Shelly demande en plus **≥ 6 kA** : sur ce point précis, vos disjoncteurs ne la respectent pas. Ce n'est pas un défaut de votre installation. Pour être strictement conforme à la notice Shelly, il faudrait passer ces 8 disjoncteurs sur une gamme 6 kA (ex. Schneider **Acti9 iDT40N**, marquée 6000 A), en faisant vérifier par l'électricien la compatibilité avec votre tableau Resi9 XP.
+* **Limite par phase :** en triphasé 12 kVA, le disjoncteur de branchement Enedis est réglé à **20 A par phase**, soit ~4,6 kW par phase. Il coupe dès qu'**une** phase dépasse, même si les deux autres sont peu chargées. Puissance totale de vos 9 radiateurs pilotés : 6 × 1500 W (3 Acova + Salle + Salon + Bureau) + 2 × 1000 W (Cuisine + Palier) + 750 W (Salle de bain, ou 500 W) = **11,75 kW** (~51,1 A cumulés), auxquels s'ajoute ponctuellement le petit sèche-serviettes du WC sur `Q17`.
   * **Attention : avec 11,75 kW de chauffage pour 12 kVA d'abonnement triphasé (3 × 4,6 kW), l'équilibrage des phases et le délestage deviennent indispensables !**
-  * **Notez sur quelle phase (L1/L2/L3) est chaque circuit radiateur** : sur le schéma du tableau ou en regardant le peigne. Trois radiateurs de 1500 W sur la même phase (4,5 kW, ~19,6 A) saturent déjà à eux seuls la limite de 20 A (4,6 kW) de cette phase ! La **répartition idéale des 9 radiateurs** sur les 3 phases est :
-    * **Phase 1 :** 2 × 1500 W + 1 × 1000 W (Cuisine) = **4,0 kW** (~17,4 A — marge restante ~600 W)
-    * **Phase 2 :** 2 × 1500 W + 1 × 1000 W (Palier) = **4,0 kW** (~17,4 A — marge restante ~600 W)
-    * **Phase 3 :** 2 × 1500 W + 1 × 750 W (Salle de bain) = **3,75 kW** (~16,3 A — marge restante ~850 W)
-    *(Astuce : répartissez aussi les 3 radiateurs de la pièce de vie — Cuisine 1000 W, Salle 1500 W, Salon 1500 W — sur les 3 phases différentes pour qu'une demande de chauffe du RDC ne charge jamais une seule phase).*
+  * **Notez sur quelle phase (L1/L2/L3) est chaque circuit radiateur** sous les différentiels tétrapolaires `I2` et `I3` : comme **`Q27` regroupe déjà 2500 W** (Chambre 2 + Palier) sur une même phase, il ne doit surtout pas partager sa phase avec deux autres radiateurs de 1500 W ($2500 + 1500 + 1500 = 5500\text{ W} > 4600\text{ W}$). La **répartition idéale des 8 disjoncteurs chauffage** sur les 3 phases est :
+    * **Phase 1 :** `Q27` (Chambre 2 1500 W + Palier 1000 W = 2500 W) + `Q15` (Salle 1500 W) = **4,0 kW** (~17,4 A — marge ~600 W)
+    * **Phase 2 :** `Q17` (Cuisine 1000 W + petit sèche-serviettes WC) + `Q16` (Salon 1500 W) + `Q28` (Chambre 3 1500 W) = **4,0 kW + WC** (~17,4 A hors WC)
+    * **Phase 3 :** `Q18` (Bureau 1500 W) + `Q29` (Chambre 1 1500 W) + `Q30` (Salle de bain 750 W) = **3,75 kW** (~16,3 A — marge ~850 W)
+    *(Ainsi, les 3 radiateurs de la pièce de vie — Salle `Q15`, Salon `Q16`, Cuisine `Q17` — sont également bien répartis sur deux/trois phases).*
   * Le Shelly mesure la tension et l'intensité : comparez les courbes de tension des 9 Shelly dans Home Assistant (les radiateurs sur la même phase ont des courbes quasi identiques) pour vérifier la répartition sans ouvrir le tableau.
   * **Délestage quasi obligatoire (ou passage à 15 kVA) :** même avec une répartition parfaite, chaque phase est chargée à 3,75–4,0 kW en pleine chauffe (il ne reste que 600 à 850 W de marge par phase pour le four, les plaques, le chauffe-eau, le lave-linge…). Activez impérativement le **délestage de Versatile Thermostat** (*configuration centrale → Gestion de la puissance*) — et profitez de l'étalement des cycles TPI entre les 3 radiateurs de la pièce de vie. Il faut un capteur de **consommation** et un capteur de **puissance maximale** (`input_number`). VT ne compare qu'une seule consommation à un seul maximum, pas phase par phase : donnez-lui la **puissance de la phase la plus chargée** (un module lisant la prise TIC du Linky fournit l'intensité par phase) et un maximum de ~4 kW (4,6 kW moins une marge). Ce n'est **pas une sécurité**, juste une optimisation : la protection reste assurée par le disjoncteur de branchement.
 
@@ -159,7 +174,7 @@ Derrière chaque radiateur (les 5 Tesi, le sèche-serviettes IRSAP et les 3 Acov
                                └─────────────────────────────────────────► • Fil Bleu (Neutre radiateur)
 ```
 *(Gardez le Wago pour le neutre : la notice Shelly prévoit que le neutre de la charge rejoigne le fil de neutre, pas qu'il transite par le pont interne entre les bornes `N`. Avec ~6,5 A en continu, le Wago est le choix sûr).*
-
+*(Dans la boîte murale de la **Cuisine (`Q17`)** et dans l'une des deux boîtes de **`Q27` (Chambre 2 ou Palier)** où arrive le câble de repiquage vers le 2e appareil : utilisez un **`Wago 221-415` (5 entrées)** sur la Phase du mur et un autre sur le Neutre du mur afin que le 2e appareil — le sèche-serviettes du WC sur `Q17`, ou le 2e radiateur sur `Q27` — soit alimenté en 230 V permanent **en amont** du Shelly, jamais sur la sortie `O` du Shelly).*
 *(Acova : fil pilote isolé = mode Confort permanent, c'est le Shelly qui coupe/remet la phase. Tesi type S : pas de fil pilote — à confirmer sur la notice ou le câble du radiateur).*
 
 **Avant de brancher :** les couleurs des fils au mur (rouge = phase, noir = fil pilote) sont supposées : identifiez-les au VAT (vérificateur d'absence de tension).
@@ -190,6 +205,9 @@ Derrière chaque radiateur (les 5 Tesi, le sèche-serviettes IRSAP et les 3 Acov
      ```bash
      curl -s -X POST http://IP_DU_SHELLY/rpc -d '{"id":1,"method":"Switch.SetConfig","params":{"id":0,"config":{"initial_state":"off","auto_off":true,"auto_off_delay":1200}}}'
      ```
+   * **Mode secours en cas de panne du routeur Wi-Fi maison (*Wi-Fi outage*) :** comme les Shelly sont enfermés derrière les radiateurs (bouton physique inaccessible), configurez dès l'installation dans *Settings → Network settings* :
+     1. **Un `Wi-Fi 2` de secours (`sta1`)** avec le nom (SSID) et le mot de passe du **partage de connexion (Hotspot 2,4 GHz) de votre téléphone** : si votre box Wi-Fi tombe en panne, allumez le partage de connexion du téléphone et les 9 Shelly s'y connectent automatiquement.
+     2. **Ou laissez le Point d'Accès (`Access Point` / `ap`) activé avec un mot de passe WPA2** : vous pourrez alors vous connecter en Wi-Fi direct sur chaque Shelly et ouvrir son serveur HTTP embarqué sur **`http://192.168.33.1`** (pensez alors à décocher temporairement `Auto-off` si vous allumez un radiateur manuellement sans Home Assistant).
 
 3. **Dans Home Assistant :**
    * Vos **9x `Shelly 1PM Gen4`** : connectez d'abord chacun au Wi-Fi **2,4 GHz** (app Shelly, ou point d'accès du Shelly sur `http://192.168.33.1`) ; ils sont ensuite découverts automatiquement en local.
