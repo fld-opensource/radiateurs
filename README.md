@@ -2,6 +2,19 @@ Voici le **récapitulatif final et corrigé** de votre installation complète, a
 
 ---
 
+### Sommaire
+
+1. [Vue d'ensemble de l'architecture](#1-vue-densemble-de-larchitecture)
+2. [Liste d'Achat Complète (Matériel & Prix vérifiés en € TTC)](#2-liste-dachat-complète-matériel--prix-vérifiés-en--ttc)
+   * [A. Les 6 Radiateurs IRSAP Neufs (5 Tesi + 1 Sèche-serviettes Salle de bain)](#a-les-6-radiateurs-irsap-neufs-5-tesi--1-sèche-serviettes-salle-de-bain)
+   * [B. Les Modules Encastrés et Sondes Shelly](#b-les-modules-encastrés-et-sondes-shelly-prix-officiels-shelly-europe--revendeurs-ue-en--ttc)
+   * [C. Petit matériel électrique (Pour les 9 boîtes murales)](#c-petit-matériel-électrique-pour-les-9-boîtes-murales)
+   * [D. Récapitulatif du Budget Total (en € TTC)](#d-récapitulatif-du-budget-total-en--ttc)
+3. [Le Branchement dans chacune des 9 boîtes murales (Schéma unifilaire & Triphasé)](#3-le-branchement-dans-chacune-des-9-boîtes-murales)
+4. [Récapitulatif de la configuration Logicielle (Odroid-C2, Shelly & Home Assistant)](#4-récapitulatif-de-la-configuration-logicielle-odroid-c2)
+
+---
+
 ### 1. Vue d'ensemble de l'architecture
 
 ```
